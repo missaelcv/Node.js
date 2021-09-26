@@ -1,6 +1,9 @@
-const frutas = ['platano','naranja','mango','pera'];
+const {frutas, dinero} = require('./frutas')
+
+
 frutas.forEach(item => {
     console.count(item)
 
 })
+console.log(dinero);
 
