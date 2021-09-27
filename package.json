@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/missaelcv/Node.js/issues"
   },
-  "homepage": "https://github.com/missaelcv/Node.js#readme"
+  "homepage": "https://github.com/missaelcv/Node.js#readme",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  }
 }
