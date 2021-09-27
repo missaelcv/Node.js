@@ -1,9 +1,16 @@
-const http = require ('http');
-const serven = http.createServer((req, res) => {
-    res.end('Estoy Respondiendo tu Solicitud V.3')
+const express = require('express');
+const app = express();
+
+const port = 3000;
+
+app.get('/',(req, res) => {
+    res.send('Mi respuesta desde express')
 })
 
-const puerto = 3000;
-serven.listen(puerto, () => {
-    console.log('Escuchando Tu Solicitud')
+app.get('/servicios',(req, res) => {
+    res.send('Estan en la pagina del servidor')
+})
+
+app.listen(port, () => {
+    console.log('Servidor a su servicio en puerto',port)
 })
