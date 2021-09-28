@@ -3,9 +3,9 @@ const app = express();
 
 const port = 3000;
 
+app.set('view engine', 'pug');
+
 app.use(express.static(__dirname + "/public"));
-
-
 
 app.get('/',(req, res) => {
     res.send('Mi respuesta desde express')
