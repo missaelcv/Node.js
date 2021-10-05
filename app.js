@@ -14,7 +14,7 @@ app.get('/',(req, res) => {
 });
 
 app.get('/servicios',(req, res) => {
-    res.send('Estan en la pagina del servicios');
+    res.render("servicios", {tituloServicio: "Este es un menesja dinamico de servicios"})
 });
 
 app.use((req, res, next) => {
