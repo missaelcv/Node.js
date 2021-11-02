@@ -11,16 +11,19 @@ app.use(express.static(__dirname + "/public"));
 
 app.get('/',(req, res) => {
     res.render("index", {titulo : "Mi Titulo dinamico"});
-});
+})
 
 app.get('/servicios',(req, res) => {
     res.render("servicios", {tituloServicio: "Este es un menesja dinamico de servicios"})
-});
+})
 
 app.use((req, res, next) => {
-    res.status(404).sendFile(__dirname + "/publc/404.html");
-});
+    res.status(404).render("404",{
+        titulo: 404,
+        descripcion: "Titulo del sitio web"
+    })
+})
 
 app.listen(port, () => {
-    console.log('Servidor a su servicio en puerto',port);
-});
+    console.log('Servidor a su servicio en puerto',port)
+})
