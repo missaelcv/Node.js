@@ -4,13 +4,14 @@ const app = express();
 
 const port = 3000;
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
+app.set('views', __dirname + ' /views');
 
 app.use(express.static(__dirname + "public"));
 
-app.get('/', (req, res) => {
-    res.send('Mi Respuesta desde express v.2')
-})
+app.get("/", (req, res) => {
+    res.render("index", { titulo: "Mi Titulo" });
+  });
 
 app.get('/servicios',(req,res) => {
     res.send('Estas en la pagina de Servicios')
@@ -21,5 +22,5 @@ app.use((req,res,next) => {
 })
 
 app.listen(port, () => {
-    console.log('servidor a su servicio en el pierto', port)
+    console.log('servidor a su servicio en el puerto', port)
 })
