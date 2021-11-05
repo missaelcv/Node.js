@@ -10,7 +10,7 @@ app.set('views', __dirname + ' /views');
 app.use(express.static(__dirname + "public"));
 
 app.get("/", (req, res) => {
-    res.render("index", { titulo: "Mi Titulo" });
+    res.send("index", { titulo: "inicio EJS" });
   });
 
 app.get('/servicios',(req,res) => {
